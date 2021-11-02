@@ -16,6 +16,21 @@ public class FacultyController {
         return facultyService.getFacultyById(id);
     }
 
+    @GetMapping("/clear/{id}")
+    public void clearFacultyById(@PathVariable int id) {
+        facultyService.clearFaciltyById(id);
+    }
+
+    @GetMapping("/clearAll")
+    public void clearAll() {
+         facultyService.clearAllFacilty();
+    }
+
+    @GetMapping("/updateCache/{id}")
+    public Faculty updateCacheFaculty(@PathVariable int id) {
+        return facultyService.updateFacultyCacheById(id);
+    }
+
     @PostMapping("/")
     public Faculty saveFaculty(@RequestBody Faculty faculty) {
         return facultyService.addFaculty(faculty);
